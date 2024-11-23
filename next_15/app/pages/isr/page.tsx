@@ -1,4 +1,5 @@
 import { getPosts } from "@/app/services/get-posts";
+// import { getUsers } from "@/app/services/get-users";
 import Link from "next/link";
 import React from "react";
 
@@ -15,6 +16,10 @@ const Page = async () => {
 
   const posts = await getPosts();
 
+  // const users = await getUsers();
+
+  // console.log("users >>", users);
+
   console.log(`posts generated ${new Date().toLocaleString()}`, posts.length);
 
   return (
@@ -25,7 +30,7 @@ const Page = async () => {
 
       {posts.length
         ? posts.map((it) => (
-            <div key={it.id}>
+            <div className=" py-2" key={it.id}>
               <Link href={`/pages/isr/${it.id}`}>{it.title}</Link>
             </div>
           ))

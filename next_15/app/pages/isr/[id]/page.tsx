@@ -1,5 +1,7 @@
-import { PostType } from "@/app/interfaces/post-type";
+// import { PostType } from "@/app/interfaces/post-type";
+// import { getPostById } from "@/app/services/get-post";
 import { getPostById } from "@/app/services/get-post";
+// import { getUsersPosts } from "@/app/services/get-users-post";
 // import { getPosts } from "@/app/services/get-posts";
 import Link from "next/link";
 import React, { FC } from "react";
@@ -31,7 +33,9 @@ export async function generateStaticParams() {
 
 const ProductPage: FC<PageProps> = async ({ params }) => {
   const par = await params;
-  const post: PostType = await getPostById(par.id);
+  const post = await getPostById(par.id);
+
+  // const posts = await getUsersPosts(par.id);
 
   console.log(
     `post ${par.id} updated ${new Date().toLocaleString()} >>`,
@@ -48,9 +52,21 @@ const ProductPage: FC<PageProps> = async ({ params }) => {
       </p>
 
       <h1>page id {par.id}</h1>
-      <p>{post.title}</p>
 
-      <p>{post.body}</p>
+      <div>
+        {/* {posts.length
+          ? posts.map((e) => <div key={e.id}>{e.title}</div>)
+          : null} */}
+        <p>{post.title}</p>
+        <p>{post.body}</p>
+      </div>
+
+      {/* <div className="flex">
+        <button className=" px-2">{`<<`}</button>
+        <button className=" px-2">{`>>`}</button>
+      </div> */}
+
+      {/* <p>{post.body}</p> */}
     </main>
   );
 };
