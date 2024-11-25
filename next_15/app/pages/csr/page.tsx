@@ -10,13 +10,15 @@ export default function DataComponent() {
     fetcher
   );
 
-  if (isLoading) return <div className=" p-16 text-center">Loading...</div>;
+  if (isLoading) return <div className=" px-16 text-center">Loading...</div>;
   if (error)
-    return <div className=" p-16 text-center">Error: {error.message}</div>;
+    return <div className=" px-16 text-center">Error: {error.message}</div>;
   if (data)
     return (
-      <div className=" p-16">
-        <h1>Data: {new Date().toLocaleString()}</h1>
+      <div className=" px-16">
+        <p className=" text-center underline italic">
+          CSR, Generated at: {new Date().toLocaleString()}
+        </p>
         <ul className="">
           {data.map((item) => (
             <li className=" py-2" key={item.id}>

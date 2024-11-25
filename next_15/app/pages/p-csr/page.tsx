@@ -17,8 +17,12 @@ const CSRPage = async () => {
   // console.log(`data ${new Date().toLocaleString()} >>`, data);
 
   return (
-    <div className=" text-center p-10">
+    <div className=" text-center px-10">
       {/* THIS PART IS STATIC  */}
+      <p className=" text-center underline italic pb-4">
+        ISR, Generated at: {new Date().toLocaleString()}
+      </p>
+
       <div className=" border border-green-500">
         <p>This is CSR, generated at {new Date().toLocaleString()}</p>
         <p>{JSON.stringify(data)}</p>

@@ -23,9 +23,9 @@ const Page = async () => {
   console.log(`posts generated ${new Date().toLocaleString()}`, posts.length);
 
   return (
-    <main className=" p-10">
-      <p className=" pb-4 italic">
-        ISR, Generated at {new Date().toLocaleString()}
+    <main className=" px-10">
+      <p className=" text-center underline italic">
+        ISR, Generated at: {new Date().toLocaleString()}
       </p>
 
       {posts.length

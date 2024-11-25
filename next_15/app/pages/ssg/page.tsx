@@ -24,13 +24,10 @@ const SSGPage = async () => {
   const posts = await getPostsNoCache();
 
   return (
-    <div className=" p-10">
-      <h2>
-        This is SSG,{" "}
-        <span className="italic text-sm underline">
-          Generated at: {new Date().toLocaleString()}
-        </span>
-      </h2>
+    <div className=" px-10">
+      <p className=" text-center underline italic pb-4">
+        SSG, Generated at: {new Date().toLocaleString()}
+      </p>
 
       <div>
         {posts.length

@@ -47,8 +47,8 @@ const ProductPage: FC<PageProps> = async ({ params }) => {
       <Link className=" pb-2 underline" href={`/pages/isr`}>
         go back
       </Link>
-      <p className=" pb-4 italic">
-        Last updated at {new Date().toLocaleString()}
+      <p className=" text-center underline italic">
+        ISR, Generated at: {new Date().toLocaleString()}
       </p>
 
       <h1>page id {par.id}</h1>

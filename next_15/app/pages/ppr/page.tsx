@@ -12,7 +12,9 @@ const page = () => {
   // https://nextjs.org/docs/app/api-reference/next-config-js/ppr
   // is not available  in this version.
 
-  return <div>this is PPR</div>;
+  return (
+    <div className=" text-center">PPR is not supported in this version</div>
+  );
 };
 
 export default page;
